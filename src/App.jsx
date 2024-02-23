@@ -1,13 +1,12 @@
 import "./App.css";
-import { TextInput } from "flowbite-react";
+
 import useBookSearch from "./useBookSearch";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Loader from "./components/loader/Loader";
+import Navbar from "./layout/Navbar";
 
 function App() {
-  const observer = useRef();
-  console.log(observer);
   const [query, setQuery] = useState("");
   const [pageNumber, setPageNumber] = useState(1);
   const { books, hasMore, loading, error } = useBookSearch(query, pageNumber);
@@ -33,8 +32,9 @@ function App() {
   //   })();
   // }, []);
   return (
-    <>
-      <div className="container mx-auto flex flex-col min-h-screen bg-primary">
+    <div className=" flex min-h-[300vh] flex-col ">
+      <Navbar />
+      <div className="container mx-auto">
         {/* <TextInput onChange={handleSearch} /> */}
         <InfiniteScroll
           next={handleEnd}
@@ -46,9 +46,9 @@ function App() {
             return <div key={index}>{item}</div>;
           })}
         </InfiniteScroll>
-        <footer className="text-white mt-auto">this footer</footer>
       </div>
-    </>
+      <footer className="text-white mt-auto">this footer</footer>
+    </div>
   );
 }
 
