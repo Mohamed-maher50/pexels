@@ -5,6 +5,7 @@ import { useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Loader from "./components/loader/Loader";
 import Navbar from "./layout/Navbar";
+import HomePage from "./pages/HomePage";
 
 function App() {
   const [query, setQuery] = useState("");
@@ -34,6 +35,7 @@ function App() {
   return (
     <div className=" flex min-h-[300vh] flex-col ">
       <Navbar />
+      <HomePage />
       <div className="container mx-auto">
         {/* <TextInput onChange={handleSearch} /> */}
         <InfiniteScroll

@@ -5,7 +5,7 @@ const DropDownLabel = ({ children, id }) => {
     <button
       id="dropdownDelayButton"
       data-dropdown-toggle={id}
-      data-dropdown-delay="500"
+      data-dropdown-delay="200"
       data-dropdown-trigger="hover"
       class="   focus:outline-none font-medium rounded-lg text-sm   text-center inline-flex items-center "
       type="button"

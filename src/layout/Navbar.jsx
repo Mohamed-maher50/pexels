@@ -90,6 +90,7 @@ const dropDown = [
   },
 ];
 const Navbar = () => {
+  const location = window.location.pathname === "/" && "hidden";
   return (
     <nav class="bg-white  fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
       <div class="max-w-screen-xl mx-auto gap-2 flex flex-wrap items-center   p-4">
@@ -101,7 +102,7 @@ const Navbar = () => {
             Logo
           </span>
         </a>{" "}
-        <SearchInput className={"grow max-w-[700px]"} />
+        <SearchInput className={`grow max-w-[700px]  ${location}`} />
         <div class="flex md:order-2 max-md:ms-auto  space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
             data-collapse-toggle="navbar-sticky"
