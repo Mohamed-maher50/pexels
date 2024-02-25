@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import SearchInput from "../components/utility/Search/Index";
-import { Button } from "flowbite-react";
+
 const Header = () => {
-  const [counter, setCounter] = useState(0);
   return (
     <div
       className="h-[600px] bg-cover  bg-no-repeat"
@@ -17,9 +16,6 @@ const Header = () => {
             creators.
           </h1>
           <SearchInput className={` h-14 w-full block  max-w-xl`} />
-          <Button onClick={() => setCounter(counter + 1)} color="blue">
-            Blue
-          </Button>
         </div>
       </div>
     </div>
