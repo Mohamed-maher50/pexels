@@ -4,7 +4,7 @@ import { IoIosArrowDown } from "react-icons/io";
 const VideoModelHeader = ({ selectedVideo, handleDownload }) => {
   return (
     <div className="flex flex-wrap justify-between">
-      <div className="flex gap-3 flex-wrap p-3">
+      <div className="flex  gap-3 flex-wrap p-3">
         <div>
           <img
             src={"https://avatar.iran.liara.run/public/boy?username=Ash"}
@@ -13,18 +13,18 @@ const VideoModelHeader = ({ selectedVideo, handleDownload }) => {
           />
         </div>
         <div className="capitalize flex flex-col justify-between">
-          <span className=" text-gray-700 text-lg font-bold">
+          <span className=" text-gray-700 text-md  font-bold">
             {selectedVideo?.user?.name}
           </span>
-          <div className="flex gap-3 text-lg font-semibold text-gray-500">
+          <div className="flex gap-2 text-md font-semibold text-gray-500">
             <span className="cursor-pointer">follow</span>
             <span className="cursor-pointer">donate</span>
           </div>
         </div>
       </div>
-      <div className="relative  ">
+      <div className="relative flex items-center ">
         <div className="flex relative  h-fit font-bold rounded-md items-center   bg-primary    text-white">
-          <button className="py-3 px-4 hover:bg-[rgba(0,0,0,0.2)] border-r  duration-500 border-gray-700 ">
+          <button className="py-3  px-2 hover:bg-[rgba(0,0,0,0.2)] border-r  duration-500 border-gray-700 ">
             Free Download
           </button>
           <button className="text-xl group block px-3  relative hover:bg-[rgba(0,0,0,0.2)]  duration-500 py-4">
@@ -39,7 +39,7 @@ const VideoModelHeader = ({ selectedVideo, handleDownload }) => {
                           handleDownload(file.link);
                         }}
                         key={index}
-                        className="p-2 w-full flex uppercase  items-center text-sm gap-5 cursor-pointer duration-500 px-5 hover:bg-gray-200"
+                        className="p-2 flex uppercase  items-center text-sm gap-5 cursor-pointer duration-500 px-5 hover:bg-gray-200"
                       >
                         <span className="text-base font-extrabold text-gray-700">
                           {file.quality}

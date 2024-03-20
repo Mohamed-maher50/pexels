@@ -50,7 +50,7 @@ const DiscoverPictureCard = ({
         <div className="flex  gap-2 items-center justify-center">
           <img
             src="https://tecdn.b-cdn.net/img/new/avatars/2.webp"
-            className="w-14 rounded-full "
+            className="w-10 sm:w-14 rounded-full "
             alt="Avatar"
           />
           <span className="text-white">{other.photographer}</span>
@@ -61,10 +61,10 @@ const DiscoverPictureCard = ({
             downloadImage(src.original, `mohamedMaher_logo_${Date.now()}.png`);
           }}
           download={true}
-          className=" items-center gap-1  justify-center bg-black hover:scale-105 duration-500  shadow-md hidden group-hover:flex px-6 py-3 rounded-md"
+          className=" items-center gap-1  justify-center bg-black hover:scale-105 duration-500  shadow-md hidden group-hover:flex px-2 sm:px-6 p-2 sm:py-3 rounded-md"
         >
-          <LuDownload className="text-lg font-extrabold" />
-          Download
+          <LuDownload className=" text-lg font-extrabold" />
+          <span className="max-sm:hidden">Download</span>
         </button>
       </div>
     </div>

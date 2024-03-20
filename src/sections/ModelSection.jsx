@@ -68,8 +68,8 @@ const ModelSection = ({ picture = imageObj }) => {
   };
   let urls = modalImage?.src && Object.entries(modalImage.src);
   return (
-    <div className=" w-11/12  duration-0 shadow-lg rounded-md p-7 bg-white">
-      <div className="flex flex-wrap justify-between">
+    <div className=" w-11/12  duration-0 shadow-lg rounded-md p-3 md:p-7 bg-white">
+      <div className="flex items-center flex-wrap justify-between">
         <div className="flex gap-3 flex-wrap p-3">
           <div>
             <img
@@ -91,7 +91,7 @@ const ModelSection = ({ picture = imageObj }) => {
         <div>
           <div className="relative  ">
             <div className="flex relative  h-fit font-bold rounded-md items-center   bg-primary    text-white">
-              <button className="py-3 px-4 hover:bg-[rgba(0,0,0,0.2)] border-r  duration-500 border-gray-700 ">
+              <button className="py-3 px-2 hover:bg-[rgba(0,0,0,0.2)] border-r  duration-500 border-gray-700 ">
                 Free Download
               </button>
               <button className="text-xl group block px-3  relative hover:bg-[rgba(0,0,0,0.2)]  duration-500 py-4">

@@ -14,7 +14,7 @@ const Modal = ({ isOpen, close, children, className = "" }) => {
       {isOpen && (
         <div
           id="model-container"
-          className="fixed z-50 w-full max-md:p-4 p-2 md:p-5 h-full left-0 overflow-auto bg-black top-0"
+          className="fixed z-50 w-full max-md:p-0 p-2 md:p-5 h-full left-0 overflow-auto bg-black top-0"
         >
           <div className=" flex max-sm:flex-col items-center justify-center">
             <IoClose
