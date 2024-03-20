@@ -1,3 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+* {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+@keyframes hide {
+  0% {
+    opacity: 1;
+    max-height: 200px;
+  }
+  100% {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
+}
+
+.animate-show {
+  animation: show 0.3s ease-in-out forwards;
+  -webkit-animation: show 0.3s ease-in-out forwards;
+}
+
+.animate-hide {
+  animation: hide 0.3s ease-in-out forwards;
+  -webkit-animation: hide 0.3s ease-in-out forwards;
+}

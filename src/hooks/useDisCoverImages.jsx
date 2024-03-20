@@ -6,18 +6,21 @@ const useDisCoverImages = ({ query, currentPage = 1 }) => {
   const [error, setError] = useState(false);
   const [images, setImages] = useState([]);
   const [hasMore, setHasMore] = useState(false);
-  console.log(currentPage);
+
   useEffect(() => {
+    setHasMore(true);
     if (images.length) setImages([]);
   }, [query]);
   useEffect(() => {
     setLoading(true);
     setError(false);
     const client = createClient(process.env.REACT_APP_PEXELS_API_KEY);
-    const query = "Nature ";
+
     client.photos
-      .search({ query, per_page: 10, page: currentPage })
+      .curated({ per_page: 10, page: currentPage })
       .then((res) => {
+        if (res.photos.length <= 0) setHasMore(false);
+
         setImages([...images, ...res.photos]);
       })
       .catch((err) => {

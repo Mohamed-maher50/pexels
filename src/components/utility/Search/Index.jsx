@@ -1,10 +1,12 @@
 import { SlPicture } from "react-icons/sl";
 import Select from "../Select/Select";
 import { MdOutlineSlowMotionVideo } from "react-icons/md";
-import { useState } from "react";
+import { useRef, useState } from "react";
+
+import { useNavigate } from "react-router-dom";
 const options = [
   {
-    label: "Picture",
+    label: "pictures",
     Icon: <SlPicture className="text-xl font-bold w-5 block" />,
   },
   {
@@ -12,23 +14,31 @@ const options = [
     Icon: <MdOutlineSlowMotionVideo className="text-xl font-bold w-5 block" />,
   },
 ];
-const Index = ({ className, ...props }) => {
-  const [formValues, setFormValues] = useState({
-    search: "",
-    type: options[0].label,
-  });
-  console.log(formValues);
-  const handleSelectBox = (value) => {
-    console.log(value);
-    setFormValues((prev) => ({ ...prev, type: value.label }));
+
+const SearchInput = ({ className, ...props }) => {
+  const nav = useNavigate();
+  const [searchType, setSearchType] = useState("pictures");
+  const searchValue = useRef(null);
+  const handleSelectBox = ({ label }) => {
+    setSearchType(label);
   };
-  const handleSearch = (e) => {
-    setFormValues((prev) => ({ ...prev, search: e.target.value }));
+  console.log(searchType);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (searchType === "pictures") {
+      nav(`/search/${searchValue.current.value}`);
+    } else if (searchType === "videos") {
+      nav(`/search/${searchValue.current.value}/videos`);
+    }
+    window.scrollTo({
+      top: 0,
+    });
   };
   return (
     <form
-      onSubmit={() => {}}
-      className={` bg-white shadow-md rounded-xl ${className} flex h-fit`}
+      onSubmit={handleSubmit}
+      className={` bg-gray-100 rounded-lg ${className} flex h-fit`}
       {...props}
     >
       <Select
@@ -37,13 +47,13 @@ const Index = ({ className, ...props }) => {
         onChange={handleSelectBox}
       />
       <input
-        onChange={handleSearch}
+        ref={searchValue}
         type="search"
-        className=" w-full border-0 rounded-lg focus:shadow-none focus:ring-0"
+        className=" w-full border-0 bg-transparent rounded-lg  focus:shadow-none focus:ring-0"
         placeholder="Search for free photos"
       />
     </form>
   );
 };
 
-export default Index;
+export default SearchInput;

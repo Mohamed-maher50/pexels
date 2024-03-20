@@ -17,7 +17,7 @@ const Select = ({ onChange, options, defaultValue }) => {
         </div>
         <FaAngleDown className="text-sm font-bold group-hover:rotate-180 duration-200 ease-out" />
       </div>
-      <ul className="absolute shadow-md grid delay-200 -z-10 group-hover:z-20  bg-white overflow-hidden text-sm w-full rounded-md top-14">
+      <ul className="absolute shadow-md grid delay-200 opacity-0 pointer-events-none group-hover:pointer-events-auto group-hover:opacity-100 -z-10  style group-hover:z-20  bg-white overflow-hidden text-sm w-full rounded-md top-12">
         {options.map(({ label, Icon }, index) => {
           return (
             <li

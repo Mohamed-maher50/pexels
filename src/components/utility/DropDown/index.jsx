@@ -9,7 +9,7 @@ const Index = ({ id, children }) => {
     });
   });
 
-  return <div>{elements}</div>;
+  return <div className="group">{elements}</div>;
 };
 Index.Items = Items;
 Index.Label = DropDownLabel;

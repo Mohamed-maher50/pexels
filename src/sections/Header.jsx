@@ -1,24 +1,33 @@
 import React from "react";
 import SearchInput from "../components/utility/Search/Index";
-
+import useHeaderPicture from "../hooks/useHeaderPicture";
 const Header = () => {
+  const { headerPicture } = useHeaderPicture();
+
+  // useEffect(() => {
+  //   if (appState === "Pictures") dispatch(getHeroPictures());
+  //   else if (appState === "videos") dispatch(getHeroVideos());
+  // }, [appState]);
+
   return (
-    <div
-      className="h-[600px] bg-cover  bg-no-repeat"
-      style={{
-        backgroundImage: `linear-gradient(to top,rgba(0,0,0,0.5),rgba(0,0,0,0.5) ),url(https://images.pexels.com/photos/19311572/pexels-photo-19311572.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=500&w=2000)`,
-      }}
-    >
-      <div className="container h-full mx-auto">
-        <div className="h-full  gap-3  flex flex-col w-full items-center justify-center font-bold   text-3xl">
-          <h1 className="max-w-2xl text-white">
-            The best free stock photos, royalty free images & videos shared by
-            creators.
-          </h1>
-          <SearchInput className={` h-14 w-full block  max-w-xl`} />
+    <>
+      <div
+        className=" bg-cover  flex  justify-center w-full items-center min-h-[500px] bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `linear-gradient(to top,rgba(0,0,0,0.5),rgba(0,0,0,0.5) ),url(${headerPicture?.src.landscape})`,
+        }}
+      >
+        <div className="w-fit px-5 flex justify-center items-center">
+          <div className="h-full w-fit   gap-3  flex flex-col items-center  font-bold   text-3xl">
+            <h1 className=" md:text-center text-white">
+              The best free stock photos, royalty free images &<br /> videos
+              shared by creators.
+            </h1>
+            <SearchInput className={` h-14 w-full block  max-w-xl`} />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

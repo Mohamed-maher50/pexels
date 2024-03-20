@@ -1,40 +1,32 @@
-/* HTML: <div className="loader"></div> */
+/* HTML: <div class="loader"></div> */
 .loader {
-  width: 100px;
+  width: 20px;
   aspect-ratio: 1;
-  padding: 10px;
-  box-sizing: border-box;
-  display: grid;
-  background: #fff;
-  filter: blur(5px) contrast(10) hue-rotate(300deg);
-  mix-blend-mode: darken;
+  background: #25b09b;
+  box-shadow: 0 0 60px 15px #25b09b;
+  transform: translate(-80px);
+  clip-path: inset(0);
+  animation: l4-1 0.5s ease-in-out infinite alternate, l4-2 1s ease-out infinite;
+  -webkit-animation: l4-1 0.5s ease-in-out infinite alternate,
+    l4-2 1s ease-out infinite;
 }
-.loader:before,
-.loader:after {
-  content: "";
-  grid-area: 1/1;
-  width: 40px;
-  height: 40px;
-  background: #ffff00;
-  animation: l7 2s infinite;
-}
-.loader:after {
-  animation-delay: -1s;
-}
-@keyframes l7 {
-  0% {
-    transform: translate(0, 0);
+@keyframes l4-1 {
+  100% {
+    transform: translateX(50px);
+    -webkit-transform: translateX(50px);
+    -moz-transform: translateX(50px);
+    -ms-transform: translateX(50px);
+    -o-transform: translateX(50px);
   }
-  25% {
-    transform: translate(100%, 0);
+}
+@keyframes l4-2 {
+  33% {
+    clip-path: inset(0 0 0 -50px);
   }
   50% {
-    transform: translate(100%, 100%);
+    clip-path: inset(0 0 0 0);
   }
-  75% {
-    transform: translate(0, 100%);
-  }
-  100% {
-    transform: translate(0, 0);
+  83% {
+    clip-path: inset(0 -50px 0 0);
   }
 }

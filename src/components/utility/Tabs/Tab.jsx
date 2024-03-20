@@ -1,7 +1,6 @@
 import React from "react";
 
 const Tab = ({ active = false, children, ...props }) => {
-  console.log(props);
   return (
     <div
       {...props}

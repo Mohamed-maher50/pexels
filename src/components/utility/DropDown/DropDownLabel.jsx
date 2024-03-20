@@ -1,18 +1,18 @@
 import React from "react";
 
-const DropDownLabel = ({ children, id }) => {
+const DropDownLabel = ({ children, className = "", id }) => {
   return (
     <button
       id="dropdownDelayButton"
       data-dropdown-toggle={id}
       data-dropdown-delay="200"
       data-dropdown-trigger="hover"
-      className="   focus:outline-none font-medium rounded-lg text-sm   text-center inline-flex items-center "
+      className={`group   focus:outline-none font-medium rounded-lg text-sm   text-center inline-flex items-center ${className}`}
       type="button"
     >
       {children}
       <svg
-        className="w-2.5 h-2.5 ms-3"
+        className="w-2.5 h-2.5 group-hover:rotate-180 duration-700 ms-3"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

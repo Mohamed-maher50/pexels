@@ -1,54 +1,28 @@
 import "./App.css";
 
-import useBookSearch from "./useBookSearch";
-import { useState } from "react";
-import InfiniteScroll from "react-infinite-scroll-component";
-import Loader from "./components/loader/Loader";
-import Navbar from "./layout/Navbar";
 import HomePage from "./pages/HomePage";
+import { Route, Routes } from "react-router-dom";
+import SearchPage from "./pages/SearchPage";
+
+import DiscoverPictures from "./sections/DiscoverPictures";
+import DiscoverVideos from "./sections/DiscoverVideos";
+import PicturesSearchPage from "./pages/PicturesSearchPage";
+import VideosSearchPage from "./pages/VideosSearchPage";
 
 function App() {
-  const [query, setQuery] = useState("");
-  const [pageNumber, setPageNumber] = useState(1);
-  const { books, hasMore, loading, error } = useBookSearch(query, pageNumber);
-  const handleSearch = (e) => {
-    setQuery(e.target.value);
-    setPageNumber(1);
-  };
-
-  const handleEnd = () => {
-    setPageNumber(pageNumber + 1);
-    setTimeout(() => {
-      console.log("done");
-    }, 1000);
-  };
-  // useEffect(() => {
-  //   (async () => {
-  //     const client = createClient(
-  //       "kXddKp9E4F7mn9CxZ7pArNziFwOOCTd02cN1lXr9dYMzMhgFdEHAglj2"
-  //     );
-  //     const query = "natural";
-  //     const result = await client.photos.search({ query, per_page: 1 });
-  //     console.log(result);
-  //   })();
-  // }, []);
   return (
     <div className=" flex min-h-[300vh] flex-col ">
-      <Navbar />
-      <HomePage />
-      <div className="container mx-auto">
-        {/* <TextInput onChange={handleSearch} /> */}
-        <InfiniteScroll
-          next={handleEnd}
-          dataLength={books.length}
-          hasMore={hasMore}
-          loader={<Loader />}
-        >
-          {books.map((item, index) => {
-            return <div key={index}>{item}</div>;
-          })}
-        </InfiniteScroll>
-      </div>
+      <Routes>
+        <Route path="/" element={<HomePage />}>
+          <Route path="/" element={<DiscoverPictures />} />
+          <Route path="/videos" element={<DiscoverVideos />} />
+        </Route>
+        <Route path="/search/:query/*" element={<SearchPage />}>
+          <Route path="" element={<PicturesSearchPage />} />
+          <Route path="videos" element={<VideosSearchPage />} />
+        </Route>
+      </Routes>
+
       <footer className="text-white mt-auto">this footer</footer>
     </div>
   );

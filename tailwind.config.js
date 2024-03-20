@@ -6,7 +6,7 @@ module.exports = {
   ],
   theme: {
     colors: {
-      primary: "#141414",
+      primary: "#05A081",
       "base-200": "#ddddd",
     },
 
@@ -15,8 +15,8 @@ module.exports = {
         DEFAULT: "1rem",
         sm: "2rem",
         lg: "4rem",
-        xl: "5rem",
-        "2xl": "6rem",
+        xl: "4rem",
+        "2xl": "4rem",
       },
     },
   },
