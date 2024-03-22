@@ -69,34 +69,30 @@ const ModelSection = ({ picture = imageObj }) => {
   let urls = modalImage?.src && Object.entries(modalImage.src);
   return (
     <div className=" w-11/12  duration-0 shadow-lg rounded-md p-3 md:p-7 bg-white">
-      <div className="flex items-center flex-wrap justify-between">
-        <div className="flex gap-3 flex-wrap p-3">
-          <div>
-            <img
-              src="https://avatar.iran.liara.run/public/boy?username=Ash"
-              className="h-14 shadow-lg object-contain rounded-full w-14"
-              alt={photographer}
-            />
-          </div>
+      <div className="flex items-center justify-between">
+        <div className="md:flex max-sm:justify-center gap-3 flex-wrap p-3">
+          <img
+            src="https://avatar.iran.liara.run/public/boy?username=Ash"
+            className=" max-sm:mx-auto mb-1 shadow-lg object-contain rounded-full w-10 sm:w-14"
+            alt={photographer}
+          />
+
           <div className="capitalize flex flex-col justify-between">
-            <span className=" text-gray-700 text-lg font-bold">
+            <span className=" text-gray-500 text-sm sm:text-lg font-bold">
               {photographer}
             </span>
-            <div className="flex gap-3 text-lg font-semibold text-gray-500">
-              <span className="cursor-pointer">follow</span>
-              <span className="cursor-pointer">donate</span>
-            </div>
           </div>
         </div>
         <div>
           <div className="relative  ">
-            <div className="flex relative  h-fit font-bold rounded-md items-center   bg-primary    text-white">
-              <button className="py-3 px-2 hover:bg-[rgba(0,0,0,0.2)] border-r  duration-500 border-gray-700 ">
-                Free Download
+            <div className="flex relative grow h-fit font-bold rounded-md items-center   bg-primary    text-white">
+              <button className="py-3 w-full px-2 hover:bg-[rgba(0,0,0,0.2)] border-r  duration-500 border-gray-700 ">
+                <span className="max-sm:hidden">Free</span>
+                Download
               </button>
               <button className="text-xl group block px-3  relative hover:bg-[rgba(0,0,0,0.2)]  duration-500 py-4">
                 <IoIosArrowDown />
-                <div className="absolute  z-30 mt-4  right-0 hidden group-hover:block">
+                <div className="absolute  z-10 mt-4  right-0 hidden group-hover:block">
                   <div className=" text-md text-black text-start mt-4     min-w-60 overflow-hidden shadow-sm  right-0  border rounded-md bg-gray-50 w-full ">
                     <ul>
                       {urls?.map(([key, value], index) => {
@@ -128,7 +124,7 @@ const ModelSection = ({ picture = imageObj }) => {
       <div className="relative">
         <FiArrowLeftCircle
           onClick={handlePrev}
-          className=" text-3xl block absolute text-green-600 top-1/2 z-50 left-5 cursor-pointer "
+          className=" text-3xl block absolute text-green-600 top-1/2  left-5 cursor-pointer "
         />
         <div className="w-fit my-5 mx-auto">
           <img

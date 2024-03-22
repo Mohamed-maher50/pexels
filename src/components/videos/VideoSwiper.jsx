@@ -15,7 +15,6 @@ const VideoSwiper = ({ handleNext, handlePrev, video, urls }) => {
             url={urls}
             controls
             muted
-            light="https://images.pexels.com/videos/1526909/free-video-1526909.jpg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200"
             style={{
               margin: "0 auto",
               maxWidth: "fit-content",

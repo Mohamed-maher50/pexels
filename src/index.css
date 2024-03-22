@@ -27,3 +27,8 @@
   animation: hide 0.3s ease-in-out forwards;
   -webkit-animation: hide 0.3s ease-in-out forwards;
 }
+@layer utilities {
+  .active-nav {
+    @apply bg-white text-black;
+  }
+}

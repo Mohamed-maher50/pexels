@@ -38,14 +38,16 @@ const SearchInput = ({ className, ...props }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className={` bg-gray-100 rounded-lg ${className} flex h-fit`}
+      className={` bg-gray-100 rounded-lg ${className} flex `}
       {...props}
     >
-      <Select
-        options={options}
-        defaultValue={options[0]}
-        onChange={handleSelectBox}
-      />
+      <div className="p-1">
+        <Select
+          options={options}
+          defaultValue={options[0]}
+          onChange={handleSelectBox}
+        />
+      </div>
       <input
         ref={searchValue}
         type="search"

@@ -119,7 +119,7 @@ const Navbar = ({ withSearchBar = false, className = "" }) => {
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
             Logo
           </span>
-        </Link>{" "}
+        </Link>
         <SearchInput className={`grow max-w-[700px]  ${location}`} />
         <div className="flex md:order-2 max-md:ms-auto  space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button

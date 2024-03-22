@@ -116,7 +116,7 @@ const FiltrationContainer = () => {
         </Tabs>
       </div>
 
-      <div className={`flex flex-wrap gap-5 `}>
+      <div className={`flex max-sm:flex-col  flex-wrap gap-5 `}>
         <DropDown
           options={OrientationsOptions}
           onChange={({ value }) => handleSearchParam("orientation", value)}
@@ -128,11 +128,11 @@ const FiltrationContainer = () => {
           options={sizesOptions}
           defaultValue={defaultSize}
           onChange={({ value }) => handleSearchParam("size", value)}
-          className="min-w-52 grow z-10"
+          className=" grow z-10"
           labelClassName="px-3"
         />
 
-        <div className="relative min-w-80 grow">
+        <div className="relative  grow">
           <button
             className="w-full grow text-start z-10 border rounded-md p-2"
             onClick={() => setPickerColorStatus(!pickerColorStatus)}
