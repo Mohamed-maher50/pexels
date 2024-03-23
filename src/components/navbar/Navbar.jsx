@@ -142,8 +142,8 @@ const Navbar = () => {
         <div className="">
           <Logo />
         </div>
-        <div className="max-sm:hidden">
-          {HomePage && <SearchInput className={`grow w-full`} />}
+        <div className="max-sm:hidden grow md:max-w-xl 2xl:max-w-4xl">
+          {HomePage && <SearchInput className={`grow w-full text-black`} />}
         </div>
         {mobileNavState && <SearchInput className={`grow w-full`} />}
 

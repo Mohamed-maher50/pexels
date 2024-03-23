@@ -41,7 +41,7 @@ const SearchInput = ({ className, ...props }) => {
       className={` bg-gray-100 rounded-lg ${className} flex `}
       {...props}
     >
-      <div className="p-1">
+      <div className="p-1 text-black">
         <Select
           options={options}
           defaultValue={options[0]}
