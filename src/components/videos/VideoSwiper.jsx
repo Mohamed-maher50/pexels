@@ -10,7 +10,7 @@ const VideoSwiper = ({ handleNext, handlePrev, video, urls }) => {
         className=" text-3xl block z-0 absolute top-1/2 md:-translate-x-5  text-white  max-sm:translate-x-5  cursor-pointer md:text-black"
       />
       <div className="md:px-5    object-contain  mx-auto">
-        <div className="flex justify-center w-fit">
+        <div className="flex justify-center w-fit mx-auto">
           {video && (
             <ReactPlayer
               url={urls}
