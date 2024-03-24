@@ -34,7 +34,7 @@ const DiscoverPictures = () => {
         <ResponsiveMasonry>
           <Masonry
             gutter="10px"
-            className="p-5"
+            className="p-5 overflow-hidden"
             columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
           >
             {images.map((picture, index) => {
