@@ -9,7 +9,6 @@ import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
 const CollectionSwiper = ({ children, ...props }) => {
   return (
     <Swiper
-      className="  "
       spaceBetween={5}
       slidesPerView={3}
       modules={[Navigation]}

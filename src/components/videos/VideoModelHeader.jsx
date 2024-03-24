@@ -4,7 +4,7 @@ import { IoIosArrowDown } from "react-icons/io";
 const VideoModelHeader = ({ selectedVideo, handleDownload }) => {
   return (
     <div className="flex flex-wrap justify-between">
-      <div className="flex  gap-3 flex-wrap p-3">
+      <div className="flex max-sm:hidden gap-3 flex-wrap p-3">
         <div>
           <img
             src={"https://avatar.iran.liara.run/public/boy?username=Ash"}
@@ -22,7 +22,7 @@ const VideoModelHeader = ({ selectedVideo, handleDownload }) => {
           </div>
         </div>
       </div>
-      <div className="relative flex items-center ">
+      <div className="relative ml-auto flex items-center ">
         <div className="flex relative  h-fit font-bold rounded-md items-center   bg-primary    text-white">
           <button className="py-3  px-2 hover:bg-[rgba(0,0,0,0.2)] border-r  duration-500 border-gray-700 ">
             Free Download

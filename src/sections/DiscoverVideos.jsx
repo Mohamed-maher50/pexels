@@ -25,7 +25,7 @@ const DiscoverVideos = () => {
     setSelectedVideo(video);
     setIsModelOpen(true);
   };
-  console.log(videos);
+
   return (
     <div className="px-2">
       <InfiniteScroll

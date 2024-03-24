@@ -1,9 +1,7 @@
 import "./App.css";
-
 import HomePage from "./pages/HomePage";
 import { Route, Routes } from "react-router-dom";
 import SearchPage from "./pages/SearchPage";
-
 import DiscoverPictures from "./sections/DiscoverPictures";
 import DiscoverVideos from "./sections/DiscoverVideos";
 import PicturesSearchPage from "./pages/PicturesSearchPage";
@@ -11,7 +9,7 @@ import VideosSearchPage from "./pages/VideosSearchPage";
 
 function App() {
   return (
-    <div className=" flex min-h-[300vh] flex-col ">
+    <div className=" flex min-h-screen flex-col ">
       <Routes>
         <Route path="/" element={<HomePage />}>
           <Route path="/" element={<DiscoverPictures />} />
@@ -22,8 +20,6 @@ function App() {
           <Route path="videos" element={<VideosSearchPage />} />
         </Route>
       </Routes>
-
-      <footer className="text-white mt-auto">this footer</footer>
     </div>
   );
 }

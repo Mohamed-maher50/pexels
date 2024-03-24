@@ -15,6 +15,7 @@ const VideoModal = ({
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [indexVideo, setIndexVideo] = useState(-1);
   let urls = useMemo(() => {
+    console.log(selectedVideo?.video_files);
     return selectedVideo?.video_files?.map((file) => {
       return file.link;
     });
