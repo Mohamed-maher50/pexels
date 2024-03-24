@@ -30,10 +30,10 @@ const VideoModal = ({
   const containerModel = document.getElementById("model-container");
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [indexVideo, setIndexVideo] = useState(-1);
-  let urls = selectedVideo.video_files
+  let urls = selectedVideo?.video_files
     .sort((a, b) => a.width - b.width)
     .map((file) => file.link);
-  console.log(urls);
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
